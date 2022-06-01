@@ -5,6 +5,9 @@ body{
   margin: 0;
   padding: 0;
 }
+a {
+  color:rgb(255, 255, 255);
+}
 
 /* Establishing Title Styles **/
 header{
@@ -38,7 +41,7 @@ header a:hover{
 }
 
 header li{
-  padding: 0 22px 0 22px;
+  padding: 0 22px 0 0;
   float: left;
   display: inline;
 }
@@ -53,13 +56,16 @@ header a{
 header nav{
   margin-bottom: 28px;
   margin-top: 10px;
-  float: right;
+  float: left;
 }
 
 ul{
+  list-style: none;
+  text-align: center;
   padding: 0;
   margin: 0;
 }
+
 
 #exhibit {
   color:rgb(255, 255, 255);
@@ -104,13 +110,13 @@ ul{
 }
 
 /* Esablishing Styles */
-.inptBox{
+/* .inptBox{
   padding:40px;
   background: rgb(43, 43, 43);
   color: #e6e6e6;
   margin-top:10px;
   margin-bottom:10px;
-}
+} */
 
 .linkLarge{
   color:#ffffff;
@@ -141,35 +147,50 @@ ul{
 }
 
 /* Side content on page */
-aside#contentSide{
+/* aside#contentSide{
   margin-top: 10px;
   float: right;
   width: 30%;
-}
+} */
 
-aside#contentSide .quote input, aside#contentSide .quote textArea{
+/* aside#contentSide .quote input, aside#contentSide .quote textArea{
   padding: 5px;
   width: 90%;
-}
+} */
 
 /* Content forming an array on page */
 #contentArray{
   margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 #contentArray .box{
-  text-align: center;
-  float: left;
-  width: 22.1%;
-  padding: 15px;
+  display:inline-block;
+  background:rgb(64, 64, 60);
+  width: 20%;
+  padding: 130px 5px;
+  margin: auto;
 }
 
+#contentArray .box:hover{
+  color:rgba(37, 65, 214, 0.9);
+  background: rgba(64, 64, 60, 0.5);
+  font-weight: bold;
+}
+
+#contentArray .box h1{
+  font-size: 14px;
+  font-size: 4vw;
+}
+
+/* Behind Images for selector boxes */
 #contentArray .box img{
   width: 85px;
 }
 
 /* Content for charity member profiles */
-#contentProfiles{
+/* #contentProfiles{
   margin-top: 30px;
 }
 
@@ -182,23 +203,23 @@ aside#contentSide .quote input, aside#contentSide .quote textArea{
 
 #contentProfiles .box img{
   width: 150px;
-}
+} */
 
 /* Main content on the page */
-article#contentColumn{
+/* article#contentColumn{
   padding-top: 20px;
   width: 65%;
   float: left;
-}
+} */
 
 /* Options for the user to pay */
-ul#options li{
+/* ul#options li{
   border: rgb(64, 64, 60) solid 2px;
   list-style: none;
   margin-bottom:5px;
   padding: 20px;
   background:rgb(64, 64, 60);
-}
+} */
 
 footer{
   background-color: rgb(36, 36, 36);
@@ -207,7 +228,7 @@ footer{
   text-align: center;
   margin-top:20px;
 }
-
+/* 
 #inputForm{
   padding: 15px;
   color: rgb(255, 255, 255);
@@ -217,8 +238,8 @@ footer{
 #inputForm form {
   float: right;
   margin-top: 15px;
-}
-
+} */
+/* 
 #inputForm input[type="email"]{
   width: 250px;
   height: 25px;
@@ -227,7 +248,7 @@ footer{
 
 #inputForm h1{
   float: left;
-}
+} */
 
 
 @media(max-width: 810px){
@@ -247,9 +268,11 @@ footer{
     float: none;
     width: 100%;
   } 
-
-
-
+  
+  header{
+    padding-bottom:  18px;
+  }
+/* 
   #inputForm form input[type="email"], .quote input, .quote textArea{
     margin-bottom: 6px;
     width: 100%;
@@ -259,13 +282,9 @@ footer{
     width: 100%;
     display: block;
   }
-  
-  header{
-    padding-bottom:  18px;
-  }
 
   #inputForm button, .quote button{
     display:block;
     width:100%;
-  }
+  } */
 }
