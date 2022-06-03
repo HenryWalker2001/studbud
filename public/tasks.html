@@ -42,6 +42,63 @@
           </div>
       </section>
     </section>
+
+
+
+
+
+
+    <form id="tasksection">
+      <label for="newTask">TASK: </label>
+      <input id="newTaskInput" name="newTask" type="text" required>
+      <!-- preventing the submission from occuring on that form -->
+      <br>
+
+      <label for="taskDue">DUE DATE: </label>
+      <input id="taskDueInput" name="taskDue" type="date">
+      <br>
+
+    <label for="dueTime">DUE TIME: </label>
+      <input id="dueTimeInput" name="dueTime" type="time">
+      <br>
+
+    <label for="taskCompetion">COMPLETION TIME (<em>minutes</em>): </label>
+    <input id="taskCompetionTimeInput" name="taskCompetion" type="number">
+    <br>
+
+    <label for="taskPriority">PRIORITY: </label>
+    <select id="taskPriorityInput" name="prority">
+      <option value=""><em></em></option>
+      <option value="MINOR">MINOR</option>
+      <option value="IMPORTANT">IMPORTANT</option>
+      <option value="ESSENTIAL">ESSENTIAL</option>
+    </select>
+    <br>
+
+
+    <label for="completionState">COMPLETION STATE: </label>
+    <select id="completionStateInput" name="completionState">
+      <option value=""><em></em></option>
+      <option value="INCOMPLETE">INCOMPLETE</option>
+      <option value="DONE">DONE</option>
+    </select>
+    <br>
+
+      <button type="save">SAVE</button>
+    </form>
+    <ul id="taskItems">
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
   </main>
 
   <!-- Footer for support & external links -->
@@ -64,5 +121,9 @@
     <button type="FACEBOOK" class="linkSmall"><i class="fab fa-facebook-f"></i></button></a> 
     <p>Studbud Incorporated | CFN: 00000000000 </p>
   </footer>
+
+
+  <script src="taskitem.js"></script>
+
 </body>
 </html>
