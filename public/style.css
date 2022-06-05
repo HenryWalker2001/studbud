@@ -17,7 +17,20 @@ a {
   text-decoration: none;
 }
 
-/* Establishing Title Styles **/
+h1 {
+  color:rgb(255, 255, 255);
+}
+
+h2 {
+  font: 40px/1.7 Bebas Neue,regular;
+  color:rgb(255, 255, 255);
+  letter-spacing: 5px;
+  padding-left: 20px;
+  margin-top: -1px;
+  margin-bottom: -5px;
+}
+
+/* Establishing Title Styles for header */
 header{
   font: 20px/1.7 Bebas Neue,regular;
   background: rgb(36, 36, 36);
@@ -67,19 +80,168 @@ header nav{
   float: left;
 }
 
+/* custom ul list styles */
 ul{
   list-style: none;
-  text-align: center;
+  text-align: left;
   padding: 0;
   margin: 0;
 }
 
-.images #homeImage{
-  background:url('images/home_page.jpeg');
+ul#taskItems{
+  float:left;
+  margin: 20px;
 }
 
-.images #musicImage{
-  background:url('images/music_player.webp');
+/* aside content styling for new items generated through JS, stored on the side */
+aside {
+  float: center;
+  border-radius: 15px;
+  background:rgb(64, 64, 60);
+  overflow: hidden;
+  min-width: 23%;
+  max-width: 100%;
+  margin: 25px 125px 25px 108px; 
+  padding: 15px;
+}
+
+form{
+  float: left;
+  border-radius: 15px;
+  background:rgb(64, 64, 60);
+  overflow: hidden;
+  width: 23%;
+  min-width: 190px;
+  margin: 25px 25px 25px 125px; 
+  padding: 15px;
+}
+
+label {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  resize: none;
+}
+
+/* custom darkmode content box input areas */
+input[type=text], input[type=number], input[type=time], input[type=date] {
+  border: none;
+  margin-left: 20px; 
+  padding: 12px 20px;
+  width: 82%;
+  min-width: 140px;
+  height: 40px;
+  box-sizing: border-box;
+  transition: height 0.3s ease-in-out;
+  background: rgb(43, 43, 43);
+  color:#ffffff;
+  resize: none;
+}
+
+input[type=text]:focus {
+  padding: 12px 20px;
+  width: 82%;
+  height: 100px;
+}
+
+button{
+  background-color: rgba(37, 65, 214, 0.9);
+  align-items: center;
+  border: none;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 20px;
+  padding: 12px 20px;
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+/* Styling of important JS content areas, such as specialselectors for lists */
+.specialSelector {
+  position: relative;
+}
+
+/* custom SCROLL selector for reference type list which contains many options */
+.specialSelector#referencesSelector{
+  border: none;
+  width: 193px;
+  height: fixed;
+  overflow-y: scroll;
+}
+
+.currentOption {
+  background-color: rgb(43, 43, 43);
+}
+
+.specialSelector select {
+  display: none; /*hiding first select element */
+}
+
+.specialSelector#referencesSelector select{
+  display: none; /*hiding first select element */
+} */
+
+.referencesSelector {
+  position: relative;
+  overflow: visible;
+  height: fixed;
+}
+
+.referencesSelector select {
+  display: none;
+  height: 40px;
+}
+
+
+/* designing the custon input box area size and functionality */
+.allCurrentOptions div,.currentOption {
+  color: #ffffff;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  width: 136px;
+  height: 5%;
+  margin-left: 20px; 
+  padding: 6px 0px 6px 20px;
+}
+
+/* the selected input box changes opacity / colour when same as previous option */
+.allCurrentOptions div, .matching {
+  color: #ffffff;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  width: 136px;
+  height: 5%;
+  margin-left: 0px; 
+  padding: 6px 0px 6px 20px;
+}
+
+.allCurrentOptions {
+  background-color: rgb(43, 43, 43);
+  left: 0;
+  right: 0;
+  width: 156px;
+  margin-left: 20px; 
+  position: absolute;
+  z-index: 99;
+  top: 100%;
+}
+
+/* styles the current hovered item that the user is on. supports the usability */
+.allCurrentOptions div:hover, .matching {
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-left: 0px;
+  width: 136px;
+} 
+
+.hidden {
+  display: none;
+}
+
+/* image backgrounds are different using ID's to the .images class */
+.images #homeImage{
+  background:url('images/home_page.jpeg');
 }
 
 .images #linksImage{
@@ -94,15 +256,14 @@ ul{
   background:url('images/stopwatch.webp');
 }
 
-.images #homeImage, .images #musicImage, .images #linksImage, .images #tasksImage, .images #timerImage{
+/* all custom image ID's need the same properties */
+.images #homeImage, .images #linksImage, .images #tasksImage, .images #timerImage{
   color:rgb(255, 255, 255);
   text-align: center;
   min-height: 100px;  
   background-position: center;
   background-size: cover;
 }
-
-
 
 .images p{
   font-size: 16px;
@@ -114,11 +275,115 @@ ul{
   margin-bottom: 10px;
 }
 
+
+
+
+
+
+
+/* columnTitleKanban
+contentItemInput
+addItemKanban */
+
+
+.contentKanban {
+  float: left;
+  border-radius: 15px;
+  background:rgb(64, 64, 60);
+  overflow: hidden;
+  min-width: 23%;
+  max-width: 100%;
+  margin: 25px 125px 25px 108px; 
+  padding: 15px;
+  flex: left;
+	display: flex;
+}
+
+.columnKanban:not(:last-child) {
+	margin-right: 20px;
+}
+
+.columnTitleKanban {
+	margin-bottom: 20px;
+	user-select: none;
+}
+
+.behindKanban {
+	height: 12px;
+	transition: background 0.20s, height 0.20s;
+}
+
+.columnKanban {
+	flex: 1;
+}
+
+.contentItemInput {
+  box-sizing: border-box;
+  background: rgb(43, 43, 43);
+	padding: 12px 20px;
+  width: 100%;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.behindKanban--active {
+  background: rgba(255, 255, 255, 0.4);
+	height: 24px;
+}
+
+.addItemKanban {
+  padding: 12px 0;
+	width: 100%;
+	font-size: 16px;
+	color: white;
+	background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: none;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* scroll side bar matches blue and grey theme */
+body::-webkit-scrollbar {
+  width: 7px;
+}
+ 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px darkgray;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(37, 65, 214, 0.6);
+}
+
 .linkLarge{
+  border-radius: 5px;
   color:#ffffff;
   padding-left: 15px;
   padding-right: 15px;
-  border-radius: 10px;
   height: 40px;
   background:rgb(37, 65, 214);
   border: 0;
@@ -127,7 +392,8 @@ ul{
   background:rgb(37, 65, 214);
   padding-left: 2px;
   padding-right: 2px;
-  padding-bottom: 0%;
+  padding-bottom: 2px;
+  padding-top: 2px;
   border-radius: 50%;
   height: 40px;
   width: 40px;
@@ -136,15 +402,18 @@ ul{
 
 /* Content forming an array on page */
 #contentArray{
+  border-radius: 15px;
   margin-top: 30px;
   margin-bottom: 30px;
   text-align: center;
 }
 
+/* custom array scaling and size fitting the window flexible design requirement */
 #contentArray .box{
+  border-radius: 15px;
   display: inline-block;
   background:rgb(64, 64, 60);
-  width: 15%;
+  width: 23%;
   padding: 130px 5px;
   margin: 10px;
 }
@@ -155,6 +424,7 @@ ul{
 }
 
 #contentArray .box:nth-of-type(n):hover{
+  border-radius: 15px;
   color:rgba(37, 65, 214, 0.9);
   font-weight: bold;
   text-align: center;
@@ -162,24 +432,21 @@ ul{
 }
 
 #contentArray a.box:nth-of-type(1):hover{
+  border-radius: 15px;
   background:url('images/tasklist.jpeg');
   background-size: cover;
   background-position: center;
 }
 
 #contentArray a.box:nth-of-type(2):hover{
+  border-radius: 15px;
   background:url('images/stopwatch.webp');
   background-size: cover;
   background-position: center;
 }
 
 #contentArray a.box:nth-of-type(3):hover{
-  background:url('images/music_player.webp');
-  background-size: cover;
-  background-position: center;
-}
-
-#contentArray a.box:nth-of-type(4):hover{
+  border-radius: 15px;
   background:url('images/links.jpeg');
   background-size: cover;
   background-position: center;
@@ -206,6 +473,18 @@ footer{
   margin-top:20px;
 }
 
+#footerform{
+  background:rgb(36, 36, 36);
+  /* position: relative; */
+  float: none;
+  border-radius: 5px;
+  background:none;
+  overflow: 0px;
+  width: 100%;
+  margin: 0px; 
+  padding: 0px;
+} 
+
 @media(max-width: 810px){
   iframe,
   .images p,
@@ -213,17 +492,13 @@ footer{
   header nav li,
   header nav,
   header #titleBox,
-  article#contentColumn,
-  aside#content_side,
-  #inputForm form,
-  #inputForm h1,
   #contentArray .box
-  #content_profiles .box{
+  .box{
     text-align: center;
     float: none;
     width: 100%;
   } 
-  
+
   header{
     padding-bottom:  18px;
   }

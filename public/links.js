@@ -1,63 +1,47 @@
-// creating const's for each different JS variable used in html
+// Extracting html data from page using getElement
 const form = document.getElementById("tasksection");
 const button = document.querySelector("#tasksection > button");
 const taskItems = document.getElementById("taskItems");
 const newTaskInput = document.getElementById("newTaskInput");
 const taskDueInput = document.getElementById("taskDueInput");
-const dueTimeInput = document.getElementById("dueTimeInput");
-const taskCompetionTimeInput = document.getElementById("taskCompetionTimeInput");
-const taskPriorityInput = document.querySelector('#taskPriorityInput');
-const completionStateInput = document.getElementById("completionStateInput");
+const referenceType = document.getElementById("referenceType");
 
-// event listens for button being selected for new task
+
+// listening for button to 'add' new content
 button.addEventListener("click", function(event) {
   event.preventDefault(); 
 
-  // each task is assigned to local variable
-  let description = newTaskInput.value;
-  let day = taskDueInput.value;
-  let time = dueTimeInput.value;
-  let completion = taskCompetionTimeInput.value;
-  let priority = taskPriorityInput.value;
-  let completionState = completionStateInput.value;
 
-  // calling createTask function with paramaters from entered html data in +Add Task area
-  createTask(description, day, time, completion, priority, completionState);
-  console.log(allTasks);
+  let linkTitle = newTaskInput.value;
+  let referenceLink = taskDueInput.value;
+  let typeNew = referenceType.value;
+
+//   Storing inputs and calling function to create a new 'taskbox'
+  createTask(linkTitle, referenceLink, typeNew);
+  console.log(allLinks);
 })
 
-// array used to store each new task
-var allTasks = [];
+var allLinks = [];
 
-// function used to create new task 
-function createTask(newTaskDescription, setupDate, taskDue, taskTime, taskImportance, currentState) {
-  let newTask = {
-    newTaskDescription,
-    setupDate,
-    taskDue,
-    taskTime,
-    taskImportance,
-    currentState
+function createTask(titleReference, hyperLink, typeReference) {
+    // paramaters of titleReference, hyperLink and typeReference used for function
+  let newLink = {
+    titleReference,
+    hyperLink,
+    typeReference
   };
-  // pushing new task into the array of all tasks
-  allTasks.push(newTask);
-
-  // calling presentTask function with the argument of a new task, formatting information
-  presentTask(newTask);
+  allLinks.push(newLink);
+  presentTask(newLink);
 }
 
-function presentTask(newTask) {
-
-  // information formatted depending on Item, in same order as created list
+function presentTask(newLink) {
   let part = document.createElement("li");
-  part.innerHTML = "<li>" + "TASK: " + newTask.newTaskDescription + "<br>" + "DUE DATE: " +
-  newTask.setupDate + "<br>" + "DUE TIME: " + newTask.taskDue + "<br>" + "COMPLETION TIME: "+
-  newTask.taskTime +"<em>min</em>"+ "<br>" + "PRIORITY: " + newTask.taskImportance + "<br>" +
-  "CURRENT STATE: " + newTask.currentState + "</li>";
+//   format of new reference item
+  part.innerHTML = "<li>" + "TASK: " + newLink.titleReference + "<br>" + "DUE DATE: " +
+  newLink.hyperLink + "<br>" + "TYPE: " + newLink.typeReference + "</li>";
 
   taskItems.appendChild(part);
 
-  // creating the remove button on each new task to delete unwanted/ completed tasks
   let remove = document.createElement("button");
   let removeText = document.createTextNode("REMOVE");
   remove.appendChild(removeText);
@@ -65,14 +49,17 @@ function presentTask(newTask) {
 
   remove.addEventListener("click", function(event){
     part.remove();
-  })  
+  })
+
+  
   form.reset();
 }
 
-// using the custom dropdown layound for list items 
+
+// JS function used to create list of items that can be scrolled and edited
 var selectorElements, part, partLength, secondLength, counter, counterTwo, docBox, docSomeBoxes, docAllBoxes;
 
-// finding input information in the 'specialSelector' class in html 
+// selecting html element in 'specialselector' custom JS to select options in a list
 selectorElements = document.getElementsByClassName("specialSelector");
 partLength = selectorElements.length;
 for (counter = 0; counter < partLength; counter++) {
@@ -86,7 +73,7 @@ selectorElements[counter].appendChild(docBox);
 docAllBoxes = document.createElement("DIV");
 docAllBoxes.setAttribute("class", "allCurrentOptions hidden");
 for (counterTwo = 1; counterTwo < secondLength; counterTwo++) {
-    // determining current box and content selected by user
+  // determining current box and content selected by user
   docSomeBoxes = document.createElement("DIV");
   docSomeBoxes.innerHTML = part.options[counterTwo].innerHTML;
   docSomeBoxes.addEventListener("click", function(partItem) {
