@@ -3,7 +3,7 @@
 
   <head>
     <!-- Web Page title  -->
-    <title>Studbud | Home </title>
+    <title>Studbud | Reading Links</title>
     <!-- Favicon -->
     <link rel="icon" href="images/study_logo.png" type="image/png" sizes="16x16">
     <!-- Meta tags -->
@@ -45,44 +45,46 @@
       </section>
     </section>
 
-    <!-- form id section used for inputing JS -->
-    <form id="tasksection">
+    <section id="contentArray">
+      <!-- form id section used for inputing JS -->
+      <form id="tasksection">
 
-      <h2>+ADD REFERNECE</h2>
-      <label for="newTask">REFERENCE TITLE:</label><br>
-      <!-- box area used to input titles of referenced content -->
-      <input id="newTaskInput" name="newTask" type="text" required><br>
-      <label for="taskDue">REFERENCE LINK:</label><br>
-      <!-- web hyperlinks to content -->
-      <input id="taskDueInput" name="taskDue" type="text" required><br>
+        <h2>+ADD REFERNECE</h2>
+        <label for="newTask">REFERENCE TITLE:</label><br>
+        <!-- box area used to input titles of referenced content -->
+        <input id="newTaskInput" name="newTask" type="text" required><br>
+        <label for="taskDue">REFERENCE LINK:</label><br>
+        <!-- web hyperlinks to content -->
+        <input id="taskDueInput" name="taskDue" type="text" required><br>
 
-      <!-- large label div with many refernce type options to categories inputs -->
-      <label for="referenceType">REFERENCE TYPE:</label><br>
-      <div class="specialSelector" id="referencesSelector">
-        <select id="referenceType" name="referencesType" required>
-          <option value=""><em>Select one...</em></option>
-          <option value="WEBSITE">WEBSITE</option>
-          <option value="JOURNAL">JOURNAL</option>
-          <option value="BOOK">BOOK</option>
-          <option value="BLOG">BLOG</option>
-          <option value="ARTWORK">ARTWORK</option>
-          <option value="BROADCAST">BROADCAST</option>
-          <option value="PODCAST">PODCAST</option>
-          <option value="MAGAZINE">MAGAZINE</option>
-          <option value="NEWSPAPER">NEWSPAPER</option>
-          <option value="VIDEO">VIDEO</option>
-        </select>
-      </div>
+        <!-- large label div with many refernce type options to categories inputs -->
+        <label for="referenceType">REFERENCE TYPE:</label><br>
+        <div class="specialSelector" id="referencesSelector">
+          <select id="referenceType" name="referencesType" required>
+            <option value=""><em>Select one...</em></option>
+            <option value="WEBSITE">WEBSITE</option>
+            <option value="JOURNAL">JOURNAL</option>
+            <option value="BOOK">BOOK</option>
+            <option value="BLOG">BLOG</option>
+            <option value="ARTWORK">ARTWORK</option>
+            <option value="BROADCAST">BROADCAST</option>
+            <option value="PODCAST">PODCAST</option>
+            <option value="MAGAZINE">MAGAZINE</option>
+            <option value="NEWSPAPER">NEWSPAPER</option>
+            <option value="VIDEO">VIDEO</option>
+          </select>
+        </div>
 
-      <!-- button elements used to push all JS elements into the new list -->
-      <button type="submit">SAVE</button>
-    </form>
-    <aside>
-      <!-- new reference list item -->
-      <h2>References:</h2>
-      <ul id="taskItems">
-      </ul>
-    </aside>
+        <!-- button elements used to push all JS elements into the new list -->
+        <button type="submit">SAVE</button>
+      </form>
+      <aside>
+        <!-- new reference list item -->
+        <h2>References:</h2>
+        <ul id="taskItems">
+        </ul>
+      </aside>
+    </section>
   </main>
 
   <!-- Footer for support & external links -->

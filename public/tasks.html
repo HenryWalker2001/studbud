@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Web Page title  -->
-    <title>Studbud | Home </title>
+    <title>Studbud | Tasks</title>
     <!-- Favicon -->
     <link rel="icon" href="images/study_logo.png" type="image/png" sizes="16x16">
     <!-- Meta tags -->
@@ -42,69 +42,49 @@
       </section>
     </section>
 
-    <form id="tasksection">
-      <h2>+ADD TASK</h2>
-      <label for="newTask">TASK:</label><br>
-      <input id="newTaskInput" name="newTask" type="text" required>
-      <!-- preventing the submission from occuring on that form using 'required' -->
-      <br>
-      <label for="taskDue">DUE DATE:</label><br>
-      <input id="taskDueInput" name="taskDue" type="date" required>
-      <br>
-      <label for="dueTime">DUE TIME:</label><br>
-      <input id="dueTimeInput" name="dueTime" type="time" required>
-      <br>
-      <label for="taskCompetion">COMPLETION TIME:</label><br>
-      <input id="taskCompetionTimeInput" name="taskCompetion" type="number" required>
-      <br>
+    <section id="contentArray">
+      <form id="tasksection">
+        <h2>+ADD TASK</h2>
+        <label for="newTask">TASK:</label><br>
+        <input id="newTaskInput" name="newTask" type="text" required>
+        <!-- preventing the submission from occuring on that form using 'required' -->
+        <br>
+        <label for="taskDue">DUE DATE:</label><br>
+        <input id="taskDueInput" name="taskDue" type="date" required>
+        <br>
+        <label for="dueTime">DUE TIME:</label><br>
+        <input id="dueTimeInput" name="dueTime" type="time" required>
+        <br>
+        <label for="taskCompetion">COMPLETION TIME:</label><br>
+        <input id="taskCompetionTimeInput" name="taskCompetion" type="number" required>
+        <br>
 
-      <div class="specialSelector">
-        <!-- Selector for different priorities -->
-        <label for="taskPriority">PRIORITY:</label><br>
-        <select id="taskPriorityInput" name="priority" required>
-          <option value=""><em>Select one...</em></option>
-          <option value="MINOR">MINOR</option>
-          <option value="IMPORTANT">IMPORTANT</option>
-          <option value="ESSENTIAL">ESSENTIAL</option>
-        </select>
-      </div>
-      <div class="specialSelector">
-        <label for="completionState">COMPLETION STATE:</label><br>
-        <select id="completionStateInput" name="completionState" required>
-          <option value=""><em>Select one...</em></option>
-          <option value="INCOMPLETE">INCOMPLETE</option>
-          <option value="DONE">DONE</option>
-        </select>
-      </div>
-      <button type="submit">SAVE</button>
-    </form>
-
-
-
-    
-    <aside>
-      <h2>Tasks:</h2>
-      <ul id="taskItems">
-      </ul>
-    </aside>
-<!-- 
-
-    <aside>
-      <h2>Tasks:</h2>
-      <div class="contentKanban">
-        <div class="columnKanban">
-          <div class="columnTitleKanban">To do</div>
-          <div class="contentItem"></div>
-            <div contenteditable class="contentItemInput">Homework</div>
-            <div class="behindKanban"></div>
-          <button class="addItemKanban" type="button">+ New</button>
+        <div class="specialSelector">
+          <!-- Selector for different priorities -->
+          <label for="taskPriority">PRIORITY:</label><br>
+          <select id="taskPriorityInput" name="priority" required>
+            <option value=""><em>Select one...</em></option>
+            <option value="MINOR">MINOR</option>
+            <option value="IMPORTANT">IMPORTANT</option>
+            <option value="ESSENTIAL">ESSENTIAL</option>
+          </select>
         </div>
-      </div>
-    </aside>
-   
- -->
-
-
+        <div class="specialSelector">
+          <label for="completionState">COMPLETION STATE:</label><br>
+          <select id="completionStateInput" name="completionState" required>
+            <option value=""><em>Select one...</em></option>
+            <option value="INCOMPLETE">INCOMPLETE</option>
+            <option value="DONE">DONE</option>
+          </select>
+        </div>
+        <button type="submit">SAVE</button>
+      </form>
+      <aside>
+        <h2>Tasks:</h2>
+        <ul id="taskItems">
+        </ul>
+      </aside>
+    </section>
 
 
   </main>

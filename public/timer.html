@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Web Page title  -->
-    <title>Studbud | Home </title>
+    <title>Studbud | Timer</title>
     <!-- Favicon -->
     <link rel="icon" href="images/study_logo.png" type="image/png" sizes="16x16">
     <!-- Meta tags -->
@@ -42,25 +42,56 @@
       </section>
     </section>
 
-    <aside>
-      <h2>TIMER: </h2>
+    <!-- Simple timer  -->
+    <section id="timer">
+      <h2>STOPWATCH TIMER: ⏱️</h2>
+      <p><span id="simple_timer">00:00:00</span></p>
+      <div class="timerbutton">
+        <button id="switch" class="start" onclick="newTime();">START</button>
+        <button id="restart" class="restart" onclick="restart();">RESTART</button>
+      </div>
+    </section>
+
+    <!-- Pomodoro timer -->
+    <aside id="timer">
+      <h2>POMODORO TIMER: ⏲️</h2>
+      <br><br>
+      <figure class="timer">
+        <div class="timerMinutes">0</div>
+        <div>:</div>
+        <div class="timerSeconds">00</div>
+        <audio
+          src="http://soundbible.com/mp3/service-bell_daniel_simion.mp3"
+        ></audio>
+        <svg class="elapsedTime" height="110" width="110">
+          <circle
+            class="elapsedTimeSpiral"
+            stroke-width="10"
+            fill="transparent"
+            r="48"
+            cx="55"
+            cy="55"
+          />
+        </svg>
+      </figure>
+
+      <div class="timerbutton">
+        <button id="customform" class="begin">Begin</button>
+        <button id="customform" class="repeat">Reset</button>
+        <button id="customform" class="hold">Pause</button>
+      </div>
+      <form action="." id="customform">
+        <label id="customform" for="study">Study</label>
+        <input type="number" value="1" id="study" />
+        <label id="customform" for="break">Break</label>
+        <input type="number" value="1" id="break" />
+        <br>
+        <button id="customform" type="submit">Save Timer Settings</button>
+      </form>
     </aside>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   </main>
+
+
 
   <!-- Footer for support & external links -->
   <footer>
@@ -82,8 +113,10 @@
     <button type="FACEBOOK" class="linkSmall"><i class="fab fa-facebook-f"></i></button></a> 
     <p>Studbud Incorporated | CFN: 00000000000 </p>
   </footer>
+
+  <script src="script.js"></script>
+  <script src="timer.js"></script>
+  <script src="current.js"></script>
+
 </body>
-
-<script src="script.js"></script>
-
 </html>
